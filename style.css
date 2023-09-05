@@ -3,8 +3,13 @@
     margin: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 
 body{
+    font-family: 'Inter', sans-serif;
     height: 100vh;
     background-image: url(./img/background-desktop.png);
     background-repeat: none;
@@ -15,12 +20,20 @@ body{
 }
 
 header{
-    background-color: rgb(1, 77, 80);
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+header a{
+    color: #22FFFE;
+    font-size: 1.5rem;
 }
 
 main{
-    background-color: aqua;
+    background-color: rgb(9, 222, 250);
     flex-grow: 1;
 }
 
