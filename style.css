@@ -100,3 +100,44 @@ footer{
 }
 
 
+/* tablet  */
+@media (max-width:768px){
+
+body{
+    padding: 32px 0px 0px 0px;
+    background-image: url(./img/background-tablet.png);
+}
+.social-container{
+    display: none;
+}
+
+.trailers{
+    flex-direction: column;
+}
+
+.trailers img{
+    width: 500px;
+}
+
+.trailers a:nth-child(2){
+    display: none;
+}
+
+.filme-container{
+    align-items:center;
+}
+.descricao{
+    justify-content: flex-start;
+    padding: 60px;
+    flex-grow: 0;
+}
+
+p{
+    text-align: center;
+}
+
+footer{
+    display: none;
+}
+
+}
