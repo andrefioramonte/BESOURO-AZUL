@@ -8,15 +8,23 @@ a{
     color: inherit;
 }
 
+html{
+    overflow: hidden;
+}
+
 body{
+    position: relative;
     font-family: 'Inter', sans-serif;
     height: 100vh;
+    width: 100vw;
     background-image: url(./img/background-desktop.png);
     background-repeat: none;
     background-size: cover;
     display: flex;
     flex-direction: column;
     padding: 32px 96px 16px 96px;
+    z-index: -100;
+    overflow: hidden;
 }
 
 header{
@@ -35,6 +43,8 @@ header a{
 
 header i.fas{
     display: none;
+    color: #D040FF;
+    font-size: 35px;
 }
 
 header a:hover{
@@ -44,7 +54,9 @@ border-bottom: 4px solid #22FFFE;
 header .logo-dc:hover{
     border-bottom: 4px solid transparent;
 }
-
+header .overlay{
+    display: none;
+}
 main{
     flex-grow: 1;
     display: flex;
@@ -174,12 +186,47 @@ header a:not(.logo-dc){
     
 }
 
-header i.fas{
+header i.fa-bars{
     display: block;
-    color: #D040FF;
-    font-size: 35px;
 }
 
+header.menu i.fa-bars{
+    display: none;
+}
+
+header.menu i.fa-bars + .fa-times{
+    display: block;
+}
+
+header .overlay{
+    display: block;
+    position: absolute;
+    background: linear-gradient(135deg, rgba(125,2,166,1) 0%, rgba(34,255,254,1) 100%);
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+header .overlay a{
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+}
+
+header.menu i.fa-bars ~ .overlay{
+    transform: translatex(0%);
+}
+
+main{
+    z-index: -2;
+}
 
 .descricao{
     padding: 0;
@@ -214,6 +261,5 @@ header i.fas{
 .trailers{
     display: none;
 }
-
 
 }
